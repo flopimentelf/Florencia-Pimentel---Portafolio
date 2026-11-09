@@ -4,16 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portafolio de Florencia Pimentel. Diseño gráfico, editorial, identidad visual y experimentación.">
-<title>Florencia Pimentel | Portfolio 2026</title>
-
+<meta name="theme-color" content="#f8f8f6">
+<title>Florencia Pimentel | Portafolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
-  --red: #890000;
+  --red: #800020;
   --black: #080808;
   --white: #f8f8f6;
   --gray: #929292;
@@ -31,22 +29,15 @@ html {
 }
 
 body {
+  font-family: 'Montserrat', sans-serif;
   background: var(--white);
   color: var(--black);
-  font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 ::selection {
@@ -56,422 +47,454 @@ img {
 
 .progress {
   position: fixed;
-  z-index: 1001;
   top: 0;
   left: 0;
   height: 3px;
   width: 0;
   background: var(--red);
+  z-index: 1000;
 }
 
-.nav {
+nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  padding: 22px 5%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 23px 5%;
-  background: rgba(248,248,246,.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,.06);
+  justify-content: space-between;
+  z-index: 100;
+  mix-blend-mode: difference;
+  color: white;
 }
 
 .logo {
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: -.5px;
-  line-height: 1.2;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.nav-right {
+.nav-links {
   display: flex;
-  align-items: center;
-  gap: 35px;
-  font-size: 9px;
+  gap: 30px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.nav-right a {
-  transition: color .3s;
+.nav-links a {
+  transition: opacity .3s;
 }
 
-.nav-right a:hover {
-  color: var(--red);
+.nav-links a:hover {
+  opacity: .55;
 }
 
 .hero {
   min-height: 100svh;
+  padding: 150px 5% 70px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 145px 5% 38px;
+  justify-content: center;
   overflow: hidden;
-  background: var(--white);
 }
 
 .hero-top {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  align-items: center;
+  margin-bottom: 55px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
+.hero-date {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
 .hero-title {
   position: relative;
   z-index: 2;
-  margin: auto 0;
-}
-
-.hero-title h1 {
-  font-size: clamp(65px, 13.5vw, 195px);
-  line-height: .79;
-  font-weight: 900;
-  letter-spacing: -.095em;
+  font-size: clamp(65px, 12.5vw, 180px);
+  line-height: .95;
+  letter-spacing: -.045em;
+  font-weight: 800;
   text-transform: uppercase;
+  word-spacing: .08em;
 }
 
-.hero-title h1 span {
+.hero-title span {
   display: block;
+  letter-spacing: -.035em;
 }
 
-.hero-title .second {
+.hero-title .second-line {
+  padding-left: 12%;
   color: var(--red);
-  text-align: right;
+  letter-spacing: -.025em;
 }
 
 .hero-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: 65px;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-description {
-  max-width: 310px;
-  font-size: 11px;
+  max-width: 380px;
+  font-size: 15px;
   line-height: 1.8;
   font-weight: 500;
 }
 
-.hero-index {
-  font-size: 9px;
+.scroll-label {
+  font-size: 10px;
   letter-spacing: 2px;
-  font-weight: 800;
-}
-
-.hero-index:hover {
-  color: var(--red);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .hero-year {
   position: absolute;
   right: 5%;
-  top: 38%;
-  font-size: clamp(100px, 19vw, 270px);
-  font-weight: 900;
+  top: 15%;
+  font-size: clamp(120px, 23vw, 340px);
+  font-weight: 800;
   letter-spacing: -.1em;
-  color: rgba(137,0,0,.045);
-  pointer-events: none;
+  color: rgba(128,0,32,.045);
+  line-height: 1;
   z-index: 0;
+  pointer-events: none;
 }
 
-.intro {
-  padding: 150px 8% 160px;
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 8%;
-  align-items: start;
+.hero-shape {
+  position: absolute;
+  width: clamp(130px, 19vw, 270px);
+  aspect-ratio: 1;
+  right: 17%;
+  top: 35%;
+  z-index: 1;
+  pointer-events: none;
+  transform: scale(.72) rotate(-18deg);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-shape-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--red);
+  border-radius: 47% 53% 63% 37% / 39% 42% 58% 61%;
+  opacity: .92;
+  animation: shapeFloat 7s ease-in-out infinite alternate;
+}
+
+@keyframes shapeFloat {
+  from {
+    border-radius: 47% 53% 63% 37% / 39% 42% 58% 61%;
+  }
+  to {
+    border-radius: 58% 42% 39% 61% / 56% 61% 39% 44%;
+  }
+}
+
+.about {
   background: var(--black);
-  color: white;
+  color: var(--white);
+  padding: 130px 5% 140px;
+  position: relative;
 }
 
-.section-label {
-  font-size: 9px;
+.section-index {
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 65px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 10%;
+}
+
+.about-heading {
+  font-size: clamp(42px, 6vw, 85px);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.08em;
   text-transform: uppercase;
 }
 
-.intro h2 {
-  font-size: clamp(35px, 5vw, 75px);
-  line-height: .95;
-  letter-spacing: -.07em;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.intro h2 span {
+.about-heading span {
   color: var(--red);
 }
 
-.intro-text {
-  padding-top: 50px;
-  max-width: 650px;
+.about-content {
+  padding-top: 8px;
 }
 
-.intro-text p {
-  font-size: clamp(14px, 1.5vw, 19px);
+.about-content p {
+  max-width: 650px;
+  font-size: clamp(17px, 1.6vw, 21px);
   line-height: 1.9;
   font-weight: 400;
+  color: rgba(255,255,255,.8);
 }
 
-.intro-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 45px;
-  margin-top: 55px;
-  font-size: 9px;
-  line-height: 1.8;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #aaa;
-}
-
-.intro-meta a {
+.wiki-link {
+  display: inline-block;
+  margin-top: 35px;
+  padding-bottom: 8px;
   border-bottom: 1px solid var(--red);
-  padding-bottom: 5px;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color .3s;
 }
 
-.works-heading {
-  padding: 110px 5% 65px;
+.wiki-link:hover {
+  color: #d58b9c;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 110px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 25px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.skill strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.skill span {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.works {
+  padding: 120px 5% 70px;
+}
+
+.works-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  margin-bottom: 85px;
 }
 
-.works-heading h2 {
-  font-size: clamp(60px, 12vw, 150px);
+.works-title {
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 800;
+  letter-spacing: -.095em;
   line-height: .8;
-  font-weight: 900;
-  letter-spacing: -.09em;
   text-transform: uppercase;
 }
 
-.works-heading h2 span {
+.works-title span {
   color: var(--red);
 }
 
-.works-heading > span {
-  font-size: 9px;
-  letter-spacing: 2px;
+.works-count {
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .project {
-  padding: 65px 5% 125px;
-  border-top: 1px solid var(--line);
-}
-
-.project-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 45px;
-}
-
-.project-number {
-  font-size: 10px;
-  letter-spacing: 2px;
-  font-weight: 800;
-  color: var(--red);
-}
-
-.project h3 {
-  font-size: clamp(38px, 7vw, 100px);
-  line-height: .88;
-  letter-spacing: -.075em;
-  font-weight: 900;
-  text-transform: uppercase;
-  max-width: 950px;
-}
-
-.project-subtitle {
-  font-size: 10px;
-  font-weight: 600;
-  margin-top: 18px;
-  letter-spacing: .5px;
-}
-
-.project-grid {
   display: grid;
   grid-template-columns: 1.2fr .8fr;
-  gap: 5%;
-  align-items: start;
-}
-
-.project-images {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.project-images .media {
-  overflow: hidden;
-  background: #dededb;
-  position: relative;
-  min-height: 230px;
-  aspect-ratio: 4/5;
-}
-
-.project-images .media:nth-child(2) {
-  margin-top: 65px;
-}
-
-.project-images .media.wide {
-  grid-column: span 2;
-  aspect-ratio: 16/9;
-}
-
-.media img {
-  transition: transform 1s cubic-bezier(.2,.7,.2,1);
-}
-
-.media:hover img {
-  transform: scale(1.06);
-}
-
-.project-info {
-  padding: 15px 0;
-  max-width: 490px;
-}
-
-.project-info p {
-  font-size: 12px;
-  line-height: 1.95;
-  margin-bottom: 23px;
-}
-
-.project-info .tech {
-  font-size: 10px;
-  line-height: 1.9;
-  color: #777;
+  gap: 7%;
+  padding: 55px 0 100px;
   border-top: 1px solid var(--line);
-  padding-top: 20px;
-  margin-top: 35px;
-}
-
-.project-info strong {
-  font-weight: 800;
-}
-
-.project-info .credits {
-  font-size: 10px;
-  line-height: 1.9;
-  margin-top: 15px;
-}
-
-.project-link {
-  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 25px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid var(--red);
-  color: var(--red);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  transition: gap .35s ease, color .35s ease;
 }
 
-.project-link:hover {
-  gap: 22px;
-  color: var(--black);
-}
-
-.project-dark {
-  background: var(--black);
-  color: white;
-}
-
-.project-dark .project-info .tech {
-  border-color: #444;
-  color: #aaa;
-}
-
-.project-dark .project-info .credits {
-  color: #aaa;
-}
-
-.project-dark .project-images .media {
-  background: #292929;
-}
-
-.project-dark .project-link:hover {
-  color: white;
-}
-
-.project-burgundy {
-  background: var(--red);
-  color: white;
-}
-
-.project-burgundy .project-number,
-.project-burgundy .project-link {
-  color: white;
-}
-
-.project-burgundy .project-link {
-  border-color: white;
-}
-
-.project-burgundy .project-info .tech {
-  border-color: rgba(255,255,255,.4);
-  color: #eee;
-}
-
-.project-burgundy .project-info .credits {
-  color: #eee;
-}
-
-.project-burgundy .project-images .media {
-  background: #500000;
-}
-
-.project-burgundy .project-link:hover {
-  color: black;
-}
-
-.project.reverse .project-grid {
+.project:nth-of-type(even) {
   grid-template-columns: .8fr 1.2fr;
 }
 
-.project.reverse .project-info {
-  order: -1;
+.project:nth-of-type(even) .project-gallery {
+  order: 2;
 }
 
-.project.reverse .project-images {
+.project:nth-of-type(even) .project-info {
   order: 1;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  align-items: start;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+  background: #e7e5e1;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.project-gallery img:first-child {
+  grid-column: span 2;
+  height: clamp(230px, 37vw, 490px);
+}
+
+.project-gallery img:hover {
+  transform: scale(.985);
+}
+
+.project-info {
+  padding: 20px 0;
+}
+
+.project-number {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--red);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.project-info h3 {
+  font-size: clamp(30px, 4vw, 55px);
+  font-weight: 800;
+  letter-spacing: -.07em;
+  line-height: .98;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.project-year {
+  font-size: 11px;
+  color: var(--gray);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 470px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.project-details {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--gray);
+  margin-bottom: 25px;
+}
+
+.project-details strong {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 7px;
+  transition: color .3s;
+}
+
+.project-link:hover {
+  color: var(--red);
+}
+
+.nene-visual {
+  grid-column: span 2;
+  min-height: 490px;
+  background: #183f88;
+  color: #f5e8d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.nene-visual::before,
+.nene-visual::after {
+  content: "";
+  position: absolute;
+  width: 65%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(245,232,208,.3);
+  border-radius: 50%;
+}
+
+.nene-visual::after {
+  width: 85%;
+}
+
+.nene-word {
+  font-size: clamp(90px, 17vw, 220px);
+  letter-spacing: -.12em;
+  font-weight: 800;
+  z-index: 1;
 }
 
 .marquee {
   background: var(--red);
   color: white;
   overflow: hidden;
-  padding: 25px 0;
+  padding: 30px 0;
   white-space: nowrap;
 }
 
 .marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 28s linear infinite;
-}
-
-.marquee span {
-  font-size: clamp(35px, 7vw, 85px);
-  font-weight: 900;
-  letter-spacing: -.07em;
+  display: inline-block;
+  animation: marquee 24s linear infinite;
+  font-size: clamp(30px, 5vw, 65px);
+  font-weight: 800;
+  letter-spacing: -.05em;
   text-transform: uppercase;
-  padding-right: 40px;
 }
 
 @keyframes marquee {
@@ -479,164 +502,75 @@ img {
   to { transform: translateX(-50%); }
 }
 
-.project-wide {
-  padding: 110px 5%;
-  background: var(--white);
-}
-
-.project-wide h3 {
-  font-size: clamp(45px, 10vw, 130px);
-  font-weight: 900;
-  letter-spacing: -.09em;
-  line-height: .85;
-  text-transform: uppercase;
-  max-width: 1000px;
-}
-
-.project-wide h3 span {
-  color: var(--red);
-}
-
-.project-wide-grid {
-  margin-top: 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5%;
-}
-
-.project-wide .media {
-  background: #ddd;
-  overflow: hidden;
-  aspect-ratio: 4/5;
-}
-
-.project-wide .wide-copy {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 10px 0;
-}
-
-.project-wide .wide-copy p {
-  font-size: 13px;
-  line-height: 1.95;
-  max-width: 550px;
-  margin-bottom: 25px;
-}
-
-.project-wide .wide-copy .tech {
-  font-size: 10px;
-  color: #666;
-  line-height: 1.9;
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-  margin-top: 25px;
-}
-
-.nene-layout {
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 5%;
-  align-items: center;
-}
-
-.nene-brand {
-  background: #244aab;
-  color: white;
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(55px, 11vw, 140px);
-  font-weight: 900;
-  letter-spacing: -.1em;
-  overflow: hidden;
-  position: relative;
-}
-
-.nene-brand::after {
-  content: "NENÉ";
-  position: absolute;
-  font-size: 20vw;
-  opacity: .06;
-  transform: rotate(-25deg);
-}
-
 .contact {
   background: var(--black);
-  color: white;
+  color: var(--white);
   padding: 120px 5% 40px;
-  position: relative;
-  overflow: hidden;
+}
+
+.contact-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 100px;
 }
 
 .contact-title {
-  font-size: clamp(65px, 14vw, 190px);
-  line-height: .78;
+  font-size: clamp(65px, 12vw, 165px);
+  line-height: .8;
   letter-spacing: -.1em;
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 .contact-title span {
+  color: var(--red);
   display: block;
-  color: var(--red);
-  text-align: right;
-}
-
-.contact-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 120px;
-  gap: 30px;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 17px;
-}
-
-.contact-info a {
-  font-size: clamp(13px, 2vw, 20px);
-  font-weight: 500;
-  transition: color .3s;
-}
-
-.contact-info a:hover {
-  color: var(--red);
 }
 
 .contact-side {
-  font-size: 9px;
-  letter-spacing: 2px;
-  line-height: 2;
-  text-align: right;
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.9;
+  max-width: 220px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 25px;
+}
+
+.contact-links a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  transition: color .3s;
+}
+
+.contact-links a:hover {
+  color: #d58b9c;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-  border-top: 1px solid #444;
-  margin-top: 100px;
-  padding-top: 25px;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  color: #aaa;
-}
-
-.footer a:hover {
-  color: white;
+  margin-top: 110px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .reveal {
   opacity: 0;
-  transform: translateY(65px);
-  transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1);
+  transform: translateY(35px);
+  transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);
 }
 
 .reveal.visible {
@@ -644,673 +578,441 @@ img {
   transform: translateY(0);
 }
 
-.scale-in {
-  opacity: 0;
-  transform: scale(.88);
-  transition: opacity 1s ease, transform 1.2s cubic-bezier(.2,.7,.2,1);
-}
-
-.scale-in.visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.slide-left {
-  opacity: 0;
-  transform: translateX(-70px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.slide-left.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-right {
-  opacity: 0;
-  transform: translateX(70px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.slide-right.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-@media (max-width: 800px) {
-  .nav {
-    padding: 19px 5%;
+@media (max-width: 760px) {
+  nav {
+    padding: 18px 5%;
   }
 
-  .nav-right {
-    gap: 16px;
+  .nav-links {
+    gap: 14px;
     font-size: 8px;
   }
 
   .hero {
     min-height: 90svh;
-    padding-top: 120px;
+    padding-top: 130px;
   }
 
-  .hero-title h1 {
-    font-size: clamp(58px, 15vw, 110px);
+  .hero-title {
+    font-size: clamp(55px, 14vw, 100px);
+    letter-spacing: -.035em;
+    line-height: .98;
   }
 
-  .hero-year {
-    top: 35%;
-    font-size: 28vw;
+  .hero-title span {
+    letter-spacing: -.025em;
   }
 
-  .intro {
-    grid-template-columns: 1fr;
-    padding: 100px 7%;
-    gap: 35px;
+  .hero-title .second-line {
+    padding-left: 4%;
+    letter-spacing: -.015em;
   }
 
-  .intro-text {
-    padding-top: 0;
-  }
-
-  .intro-meta {
-    gap: 25px;
-  }
-
-  .works-heading {
-    padding: 85px 5% 45px;
-  }
-
-  .project {
-    padding: 60px 5% 90px;
-  }
-
-  .project-grid,
-  .project.reverse .project-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .project-info,
-  .project.reverse .project-info {
-    order: 2;
-  }
-
-  .project-images,
-  .project.reverse .project-images {
-    order: 1;
-  }
-
-  .project-info p {
-    font-size: 12px;
-  }
-
-  .project-wide-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .project-wide .wide-copy {
-    gap: 20px;
-  }
-
-  .nene-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .nene-brand {
-    max-width: 450px;
-  }
-
-  .contact-content {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 80px;
-  }
-
-  .contact-side {
-    text-align: left;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-right {
-    gap: 12px;
-  }
-
-  .nav-right a:nth-child(2) {
-    display: none;
-  }
-
-  .hero-top {
-    font-size: 7px;
+  .hero-shape {
+    right: 8%;
+    top: 39%;
+    width: 34vw;
   }
 
   .hero-bottom {
+    gap: 25px;
     align-items: flex-end;
-    gap: 20px;
   }
 
   .hero-description {
-    max-width: 220px;
-    font-size: 9px;
+    max-width: 230px;
+    font-size: 13px;
   }
 
-  .hero-index {
-    font-size: 7px;
+  .scroll-label {
+    font-size: 8px;
+    text-align: right;
   }
 
-  .project-images {
-    gap: 7px;
+  .about {
+    padding: 90px 6%;
   }
 
-  .project-images .media {
-    min-height: 160px;
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
   }
 
-  .project-images .media:nth-child(2) {
-    margin-top: 35px;
+  .about-heading {
+    font-size: 65px;
   }
 
-  .project h3 {
-    font-size: 12vw;
+  .about-content p {
+    font-size: 16px;
   }
 
-  .project-wide h3 {
-    font-size: 13vw;
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 70px;
   }
 
-  .works-heading h2 {
-    font-size: 17vw;
+  .skill strong {
+    font-size: 12px;
+  }
+
+  .skill span {
+    font-size: 12px;
+  }
+
+  .works {
+    padding: 90px 6% 50px;
+  }
+
+  .works-header {
+    margin-bottom: 60px;
+  }
+
+  .works-title {
+    font-size: 70px;
+  }
+
+  .project,
+  .project:nth-of-type(even) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 40px 0 70px;
+  }
+
+  .project:nth-of-type(even) .project-gallery,
+  .project:nth-of-type(even) .project-info {
+    order: initial;
+  }
+
+  .project-gallery img {
+    height: 180px;
+  }
+
+  .project-gallery img:first-child {
+    height: 280px;
+  }
+
+  .project-info h3 {
+    font-size: 40px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .project-details {
+    font-size: 11px;
+  }
+
+  .nene-visual {
+    min-height: 300px;
+  }
+
+  .contact {
+    padding: 90px 6% 30px;
+  }
+
+  .contact-top {
+    flex-direction: column;
+    gap: 45px;
+    margin-bottom: 70px;
   }
 
   .contact-title {
-    font-size: 17vw;
+    font-size: 85px;
   }
 
-  .project-head {
-    gap: 15px;
+  .contact-side {
+    font-size: 13px;
+  }
+
+  .footer {
+    margin-top: 80px;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    scroll-behavior: auto !important;
     animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
     transition-duration: .01ms !important;
-  }
-
-  .reveal, .scale-in, .slide-left, .slide-right {
-    opacity: 1;
-    transform: none;
   }
 }
 </style>
 </head>
 
 <body>
-
 <div class="progress" id="progress"></div>
 
-<nav class="nav">
-  <a href="#inicio" class="logo">FLORENCIA<br>PIMENTEL®</a>
-  <div class="nav-right">
-    <a href="#proyectos">Proyectos</a>
+<nav>
+  <a href="#inicio" class="logo">FP.</a>
+  <div class="nav-links">
     <a href="#sobre-mi">Sobre mí</a>
-    <a href="#contacto">Contacto ↗</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">Wiki ↗</a>
+    <a href="#contacto">Contacto</a>
   </div>
 </nav>
 
 <header class="hero" id="inicio">
-  <div class="hero-top">
-    <span>Diseño gráfico / Editorial / Visual</span>
-    <span>Chile · 2026</span>
-  </div>
-
   <div class="hero-year">2026</div>
 
-  <div class="hero-title">
-    <h1 class="reveal">
-      <span>Florencia</span>
-      <span class="second">Pimentel.</span>
-    </h1>
+  <div class="hero-shape" id="heroShape">
+    <div class="hero-shape-inner"></div>
   </div>
 
+  <div class="hero-top">
+    <span class="eyebrow">Portafolio de diseño</span>
+    <span class="hero-date">2025 — 2026</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span>Florencia</span>
+    <span class="second-line">Pimentel.</span>
+  </h1>
+
   <div class="hero-bottom">
-    <p class="hero-description reveal">
-      Exploración visual, comunicación y diseño.
-      Una selección de proyectos y procesos creativos.
+    <p class="hero-description">
+      Diseño, exploración y desarrollo de ideas a través de distintas disciplinas y medios.
     </p>
-    <a href="#proyectos" class="hero-index">SCROLL TO EXPLORE ↓</a>
+    <span class="scroll-label">Desliza para explorar ↓</span>
   </div>
 </header>
 
-<section class="intro" id="sobre-mi">
-  <div class="section-label reveal">01 / Presentación</div>
+<section class="about" id="sobre-mi">
+  <div class="section-index reveal">01 / Sobre mí</div>
 
-  <div>
-    <h2 class="reveal">Diseñar<br>es <span>explorar.</span></h2>
+  <div class="about-grid">
+    <h2 class="about-heading reveal">Diseñar<br>desde la<br><span>curiosidad.</span></h2>
 
-    <div class="intro-text reveal">
+    <div class="about-content reveal">
       <p>
-        Soy Florencia Pimentel, estudiante de Diseño Gráfico en la
-        Escuela de Arquitectura y Diseño de la Pontificia Universidad
-        Católica de Valparaíso. Me interesa la exploración visual,
-        el diseño editorial, la identidad de marca y la relación
-        entre los objetos, las personas y su entorno.
+        Soy Florencia Pimentel, estudiante de Diseño en la Escuela de Arquitectura y Diseño de la Pontificia Universidad Católica de Valparaíso. Me interesa especialmente el diseño gráfico, editorial y de interacción, explorando las posibilidades de la comunicación visual y los medios digitales. También cuento con habilidades en diseño industrial, modelado tridimensional, desarrollo de objetos y fabricación digital, integrando distintas disciplinas en mis procesos de diseño.
       </p>
 
-      <div class="intro-meta">
-        <span>DISEÑO GRÁFICO<br>PUCV · CHILE</span>
-        <span>EDITORIAL<br>BRANDING · DIGITAL</span>
-        <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener">CASIOPEA ↗</a>
-      </div>
+      <a class="wiki-link" href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">
+        Explorar mi wiki en Casiopea ↗
+      </a>
+    </div>
+  </div>
+
+  <div class="skills reveal">
+    <div class="skill">
+      <strong>DISEÑO GRÁFICO</strong>
+      <span>Identidad visual · Diseño editorial · Comunicación visual</span>
+    </div>
+    <div class="skill">
+      <strong>DISEÑO DE INTERACCIÓN</strong>
+      <span>Experiencia · Medios digitales · Diseño web</span>
+    </div>
+    <div class="skill">
+      <strong>DISEÑO INDUSTRIAL</strong>
+      <span>Modelado 3D · Desarrollo de objetos · Fabricación digital</span>
     </div>
   </div>
 </section>
 
-<section id="proyectos">
-
-  <div class="works-heading">
-    <h2 class="reveal">Selected<br>works<span>.</span></h2>
-    <span>02 / 06 PROYECTOS</span>
+<main class="works" id="proyectos">
+  <div class="works-header reveal">
+    <h2 class="works-title">Proyec<span>tos.</span></h2>
+    <span class="works-count">SELECCIÓN / 2025—2026</span>
   </div>
 
-  <!-- URDIMBRE -->
-
   <article class="project">
-    <div class="project-head">
-      <div>
-        <div class="project-number">01 / 06</div>
-        <h3 class="reveal">Urdimbre</h3>
-        <div class="project-subtitle">Sistema de soporte para impresión 3D en arcilla</div>
-      </div>
-      <span class="project-number">2026</span>
+    <div class="project-gallery reveal">
+      <img src="img/urdimbre-01.jpg" alt="Proyecto Urdimbre, vista general">
+      <img src="img/urdimbre-02.jpg" alt="Detalle del mecanismo Urdimbre">
+      <img src="img/urdimbre-03.jpg" alt="Componentes del proyecto Urdimbre">
     </div>
 
-    <div class="project-grid">
-      <div class="project-images">
-        <div class="media scale-in">
-          <img src="img/urdimbre-01.jpg" alt="Urdimbre, pieza cerámica" loading="lazy">
-        </div>
-        <div class="media scale-in">
-          <img src="img/urdimbre-02.jpg" alt="Sistema de impresión" loading="lazy">
-        </div>
-        <div class="media wide scale-in">
-          <img src="img/urdimbre-03.jpg" alt="Mecanismo de Urdimbre" loading="lazy">
-        </div>
+    <div class="project-info reveal">
+      <div class="project-number">01 / PROYECTO</div>
+      <h3>Urdimbre</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Sistema de apoyo para la impresión 3D en arcilla que busca acompañar el proceso de construcción de formas. Mediante una base de madera y muros de acrílico transparente cortados con láser, se incorporan varillas de madera de manera manual durante la extrusión para sostener zonas inestables. El proyecto considera un kit de componentes, manual de uso y packaging.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Grasshopper · Corte láser · Impresión 3D en arcilla · AutoCAD · InDesign · Illustrator<br>
+        <strong>Docentes:</strong> Leonardo Aravena y Renée Rodo<br>
+        <strong>Colaboradores:</strong> Alonso Hernández y Matías Arce
       </div>
-
-      <div class="project-info reveal">
-        <p>
-          Urdimbre es un proyecto de diseño y fabricación digital que
-          busca resolver las dificultades estructurales de la impresión
-          3D en arcilla. Propone un sistema de soporte que acompaña la
-          extrusión, proporcionando estabilidad a geometrías inclinadas
-          y zonas que no logran sostenerse por sí mismas.
-        </p>
-
-        <p>
-          El mecanismo está compuesto por una base de madera y paredes
-          de acrílico transparente fabricadas mediante corte láser.
-          Durante la impresión, se incorporan manualmente palitos de
-          madera que se entrecruzan y generan puntos de apoyo en las
-          zonas más inestables.
-        </p>
-
-        <p>
-          El proyecto se complementa con un kit que incluye los
-          componentes del sistema, un manual de instrucciones y un
-          packaging diseñado para facilitar su organización,
-          protección y transporte.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> Grasshopper · Corte láser ·
-          Impresión 3D en arcilla · AutoCAD · InDesign · Illustrator.
-        </div>
-
-        <div class="credits">
-          Docentes: Leonardo Aravena y Renée Rodo.<br>
-          Colaboradores: Alonso Hernández y Matías Arce.
-        </div>
-
-        <a class="project-link"
-           href="https://wiki.ead.pucv.cl/Matias_Arce,_Alonso_Hernandez,_Florencia_Pimentel._TPyT_S1_2026._Flujo_y_Asiento"
-           target="_blank" rel="noopener">
-          VER PROYECTO EN CASIOPEA ↗
-        </a>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/Matias_Arce,_Alonso_Hernandez,_Florencia_Pimentel._TPyT_S1_2026._Flujo_y_Asiento" target="_blank" rel="noopener noreferrer">Ver proyecto en Casiopea ↗</a>
       </div>
     </div>
   </article>
 
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>FORMA · MATERIA · EXPERIMENTACIÓN · DISEÑO ·</span>
-      <span>FORMA · MATERIA · EXPERIMENTACIÓN · DISEÑO ·</span>
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/continuidad-01.jpg" alt="Continuidad estratificada de una forma envolvente">
+      <img src="img/continuidad-02.jpg" alt="Detalle de impresión en arcilla">
+      <img src="img/continuidad-03.jpg" alt="Resultado cerámico del proyecto">
     </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">02 / PROYECTO</div>
+      <h3>Continuidad estratificada</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Exploración de la construcción paramétrica de formas envolventes mediante Rhinoceros, Grasshopper e impresión 3D en arcilla. El ejercicio trabaja con trayectorias continuas y capas sucesivas, poniendo a prueba los límites estructurales del material hasta alcanzar su colapso. El modelo final atraviesa un proceso cerámico de secado, quema y esmaltado.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Diseño paramétrico · Grasshopper · Impresión 3D en arcilla · Photoshop<br>
+        <strong>Docentes:</strong> Leonardo Aravena y Renée Rodo
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/TPyT_S1_2026._Continuidad_estratificada_de_una_forma_envolvente" target="_blank" rel="noopener noreferrer">Ver proyecto en Casiopea ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/tramas-01.jpg" alt="Tramas de Elección, dispositivo de participación">
+      <img src="img/tramas-02.jpg" alt="Detalle de las piezas acrílicas">
+      <img src="img/tramas-03.jpg" alt="Visualización digital de resultados">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">03 / PROYECTO</div>
+      <h3>Tramas de Elección</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Dispositivo físico de levantamiento de información situado en Barrio Puerto, Valparaíso. A través de capas de acrílico cortadas con láser, recoge percepciones sobre seguridad, luminosidad, transitabilidad y actividad urbana. La experiencia se complementa con una plataforma web interactiva que representa los resultados mediante formas geométricas de distintos colores.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> AutoCAD · Illustrator · Corte láser · Diseño web · HTML · CSS · JavaScript · Supabase<br>
+        <strong>Docentes:</strong> Katherine Eexe y Javiera Ruiz<br>
+        <strong>Colaboradores:</strong> Fabián Flores, Amanda Garviso, Agustina Silva, Catalina Esperanza González Godoy, Gloria García y Antonela Barría
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/Proyecto_de_Visualizaci%C3%B3n_-_Grupo_1" target="_blank" rel="noopener noreferrer">Ver investigación ↗</a>
+        <a class="project-link" href="https://flopimentelf.github.io/Tramas-de-elecci-n/" target="_blank" rel="noopener noreferrer">Ver plataforma ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/pimentel-01.jpg" alt="Identidad visual Pimentel Máquinas y Áridos">
+      <img src="img/pimentel-02.jpg" alt="Aplicaciones de marca Pimentel">
+      <img src="img/pimentel-03.jpg" alt="Sistema gráfico de Pimentel">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">04 / IDENTIDAD VISUAL</div>
+      <h3>Pimentel Máquinas y Áridos</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Desarrollo de identidad visual para una empresa familiar de Olmué, dedicada hace más de veinte años al movimiento de tierra, arriendo de maquinaria y venta de áridos. El proyecto aborda la construcción de una nueva marca, su sistema gráfico y distintas aplicaciones para comunicar sus servicios.
+      </p>
+      <div class="project-details">
+        <strong>Áreas:</strong> Branding · Identidad visual · Diseño gráfico · Aplicaciones de marca
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <div class="nene-visual">
+        <span class="nene-word">nené</span>
+      </div>
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">05 / PROYECTO PERSONAL</div>
+      <h3>Nené Alfajores</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Emprendimiento personal de alfajores que desarrolla una identidad visual en torno al color azul y los mosaicos. La propuesta busca construir un lenguaje gráfico cálido y reconocible, aplicado a los productos, piezas promocionales y contenidos para redes sociales.
+      </p>
+      <div class="project-details">
+        <strong>Áreas:</strong> Branding · Packaging · Diseño gráfico · Comunicación visual
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/exposicion-01.jpg" alt="Exposición 40 años de viajes por América">
+      <img src="img/exposicion-02.jpg" alt="Módulos expositivos">
+      <img src="img/exposicion-03.jpg" alt="Detalle de montaje de la exposición">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">06 / EXPOSICIÓN</div>
+      <h3>40 años de viajes por América</h3>
+      <div class="project-year">2025</div>
+      <p class="project-description">
+        Participación en el desarrollo de módulos expositivos para la muestra presentada en el Instituto de Arquitetos do Brasil, en Río de Janeiro. En colaboración con estudiantes del Taller de Diseño de Ediciones Digitales, se diseñaron y fabricaron módulos que orientaban a los visitantes hacia una página web, integrando composición editorial, edición de imágenes y construcción manual.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Construcción y fabricación manual de módulos expositivos · Corte y ensamblaje · Trabajo colaborativo · InDesign · Adobe Photoshop
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://www.ead.pucv.cl/experiencia/travesias/exposicion-40-anos-de-viajes-por-america/" target="_blank" rel="noopener noreferrer">Ver exposición ↗</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<div class="marquee">
+  <div class="marquee-track">
+    DISEÑO · INVESTIGACIÓN · EXPERIMENTACIÓN · COMUNICACIÓN · DISEÑO · INVESTIGACIÓN · EXPERIMENTACIÓN · COMUNICACIÓN ·
+  </div>
+</div>
+
+<footer class="contact" id="contacto">
+  <div class="section-index reveal">02 / Contacto</div>
+
+  <div class="contact-top reveal">
+    <h2 class="contact-title">Hablemos<span>de ideas.</span></h2>
+    <p class="contact-side">
+      Un espacio para compartir proyectos, procesos y nuevas posibilidades de colaboración.
+    </p>
   </div>
 
-  <!-- CONTINUIDAD -->
-
-  <article class="project project-dark reverse">
-    <div class="project-head">
-      <div>
-        <div class="project-number">02 / 06</div>
-        <h3 class="reveal">Continuidad<br>estratificada</h3>
-        <div class="project-subtitle">Diseño paramétrico y exploración formal</div>
-      </div>
-      <span class="project-number">2026</span>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-images">
-        <div class="media scale-in">
-          <img src="img/continuidad-01.jpg" alt="Exploración de forma envolvente" loading="lazy">
-        </div>
-        <div class="media scale-in">
-          <img src="img/continuidad-02.jpg" alt="Impresión cerámica" loading="lazy">
-        </div>
-        <div class="media wide scale-in">
-          <img src="img/continuidad-03.jpg" alt="Proceso de fabricación" loading="lazy">
-        </div>
-      </div>
-
-      <div class="project-info reveal">
-        <p>
-          El proyecto explora la construcción de formas envolventes
-          mediante un sistema paramétrico desarrollado en Rhinoceros
-          y Grasshopper, orientado a la fabricación mediante impresión
-          3D en arcilla. A través de trayectorias continuas y capas
-          superpuestas, se generan geometrías que exploran las
-          relaciones entre interior, exterior y vacío.
-        </p>
-
-        <p>
-          La experimentación busca explorar los límites estructurales
-          de la arcilla, llevando sus posibilidades de forma hasta el
-          punto de colapso. El modelo final completó el proceso
-          cerámico, incluyendo secado, cocción y esmaltado.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> Diseño paramétrico · Grasshopper ·
-          Impresión 3D en arcilla · Photoshop.
-        </div>
-
-        <div class="credits">
-          Docentes: Leonardo Aravena y Renée Rodo.
-        </div>
-
-        <a class="project-link"
-           href="https://wiki.ead.pucv.cl/TPyT_S1_2026._Continuidad_estratificada_de_una_forma_envolvente"
-           target="_blank" rel="noopener">
-          VER PROYECTO EN CASIOPEA ↗
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <!-- TRAMAS -->
-
-  <article class="project project-burgundy">
-    <div class="project-head">
-      <div>
-        <div class="project-number">03 / 06</div>
-        <h3 class="reveal">Tramas de<br>elección</h3>
-        <div class="project-subtitle">Sistema de recolección y visualización territorial</div>
-      </div>
-      <span class="project-number">2026</span>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-images">
-        <div class="media scale-in">
-          <img src="img/tramas-01.jpg" alt="Dispositivo Tramas de Elección" loading="lazy">
-        </div>
-        <div class="media scale-in">
-          <img src="img/tramas-02.jpg" alt="Detalle del dispositivo" loading="lazy">
-        </div>
-        <div class="media wide scale-in">
-          <img src="img/tramas-03.jpg" alt="Investigación territorial" loading="lazy">
-        </div>
-      </div>
-
-      <div class="project-info reveal">
-        <p>
-          Tramas de Elección es un proyecto de investigación territorial
-          en Barrio Puerto, Valparaíso, que busca recopilar percepciones
-          sobre el espacio urbano a través de un dispositivo físico de
-          recolección de información. Construido principalmente mediante
-          capas de acrílico cortadas a láser, permite registrar
-          valoraciones sobre seguridad, luminosidad, transitabilidad
-          y actividad urbana.
-        </p>
-
-        <p>
-          El proyecto se complementa con una plataforma web interactiva
-          que visualiza los resultados mediante figuras geométricas
-          de colores, permitiendo consultar y comparar la información
-          recopilada.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> AutoCAD · Illustrator · Corte láser ·
-          Diseño web · HTML · CSS · JavaScript · Supabase.
-        </div>
-
-        <div class="credits">
-          Docentes: Katherine Eexe y Javiera Ruiz.<br>
-          Colaboradores: Fabián Flores, Amanda Garviso, Agustina Silva,
-          Catalina Esperanza González Godoy, Gloria García y Antonela Barría.
-        </div>
-
-        <a class="project-link"
-           href="https://wiki.ead.pucv.cl/Proyecto_de_Visualizaci%C3%B3n_-_Grupo_1"
-           target="_blank" rel="noopener">
-          VER INVESTIGACIÓN EN CASIOPEA ↗
-        </a>
-
-        <a class="project-link"
-           href="https://flopimentelf.github.io/Tramas-de-elecci-n/"
-           target="_blank" rel="noopener">
-          VISITAR PLATAFORMA WEB ↗
-        </a>
-      </div>
-    </div>
-  </article>
-
-  <!-- PIMENTEL -->
-
-  <article class="project">
-    <div class="project-head">
-      <div>
-        <div class="project-number">04 / 06</div>
-        <h3 class="reveal">Pimentel<br>Máquinas y Áridos</h3>
-        <div class="project-subtitle">Identidad visual · Rebranding</div>
-      </div>
-      <span class="project-number">2026</span>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-images">
-        <div class="media scale-in">
-          <img src="img/pimentel-01.jpg" alt="Identidad Pimentel" loading="lazy">
-        </div>
-        <div class="media scale-in">
-          <img src="img/pimentel-02.jpg" alt="Aplicaciones de marca" loading="lazy">
-        </div>
-        <div class="media wide scale-in">
-          <img src="img/pimentel-03.jpg" alt="Comunicación de marca" loading="lazy">
-        </div>
-      </div>
-
-      <div class="project-info reveal">
-        <p>
-          Proyecto de rebranding para una empresa familiar de Olmué
-          con más de 20 años de experiencia en movimiento de tierras,
-          maquinaria y comercialización de áridos. La propuesta
-          se centra en Pimentel como marca principal, creando una
-          identidad visual que transmite solidez y experiencia.
-        </p>
-
-        <p>
-          El trabajo incluye logotipo, isotipo, sistema gráfico,
-          aplicaciones de marca y gestión de Instagram para fortalecer
-          su comunicación y presencia digital.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> Branding · Identidad visual ·
-          Diseño gráfico · Aplicaciones de marca · Gestión de redes sociales.
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- NENE -->
-
-  <section class="project-wide">
-    <div class="project-number">05 / 06 · PROYECTO PROPIO</div>
-
-    <h3 class="reveal">Nené<br>Alfajores<span>.</span></h3>
-
-    <div class="project-wide-grid nene-layout">
-      <div class="nene-brand scale-in">nené</div>
-
-      <div class="wide-copy reveal">
-        <p>
-          Nené Alfajores es un emprendimiento independiente dedicado
-          a la elaboración y venta de alfajores artesanales. El proyecto
-          contempla el desarrollo integral de su identidad visual y
-          comunicación de marca, buscando transmitir cercanía, dulzura
-          y una personalidad propia.
-        </p>
-
-        <p>
-          La propuesta gráfica se construye a partir del color azul
-          como elemento principal, acompañado de composiciones
-          inspiradas en mosaicos que aportan dinamismo, textura y
-          reconocimiento visual. Esta identidad se aplica a la
-          presentación de los productos, piezas promocionales y
-          contenido para redes sociales.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> Branding · Diseño de packaging ·
-          Gestión de redes sociales · InDesign · Illustrator · Photoshop.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPOSICIÓN -->
-
-  <article class="project project-dark">
-    <div class="project-head">
-      <div>
-        <div class="project-number">06 / 06</div>
-        <h3 class="reveal">Exposición<br>Río de Janeiro</h3>
-        <div class="project-subtitle">40 años de viajes por América</div>
-      </div>
-      <span class="project-number">2025</span>
-    </div>
-
-    <div class="project-grid">
-      <div class="project-images">
-        <div class="media scale-in">
-          <img src="img/exposicion-01.jpg" alt="Exposición en Río de Janeiro" loading="lazy">
-        </div>
-        <div class="media scale-in">
-          <img src="img/exposicion-02.jpg" alt="Módulos expositivos" loading="lazy">
-        </div>
-        <div class="media wide scale-in">
-          <img src="img/exposicion-03.jpg" alt="Montaje de exposición" loading="lazy">
-        </div>
-      </div>
-
-      <div class="project-info reveal">
-        <p>
-          La exposición conmemora los 40 años de las Travesías de
-          Amereida, reuniendo registros fotográficos y experiencias
-          de viajes realizados por América por la comunidad de la
-          Escuela de Arquitectura y Diseño de la PUCV.
-        </p>
-
-        <p>
-          La muestra se llevó a cabo en el Instituto de Arquitectos
-          de Brasil (IAB-RJ), en Río de Janeiro. Junto a mis compañeros
-          del Taller de Diseño de Ediciones Digitales, participé en
-          la creación de módulos expositivos que orientan a los
-          visitantes y los conectan con la plataforma web de la muestra.
-        </p>
-
-        <div class="tech">
-          <strong>Procesos:</strong> Construcción y fabricación manual
-          de módulos expositivos · Corte y ensamblaje · Trabajo
-          colaborativo · InDesign · Adobe Photoshop.
-        </div>
-
-        <a class="project-link"
-           href="https://wiki.ead.pucv.cl/Traves%C3%ADa_R%C3%ADo_de_Janeiro_2025"
-           target="_blank" rel="noopener">
-          VER TRAVESÍA EN CASIOPEA ↗
-        </a>
-      </div>
-    </div>
-  </article>
-
-</section>
-
-<section class="contact" id="contacto">
-  <div class="section-label reveal">03 / Hablemos</div>
-
-  <h2 class="contact-title reveal">
-    Let's<br>
-    <span>connect.</span>
-  </h2>
-
-  <div class="contact-content">
-    <div class="contact-info reveal">
-      <a href="mailto:florencia.pimentel.f@mail.pucv.cl">
-        florencia.pimentel.f@mail.pucv.cl ↗
-      </a>
-
-      <a href="tel:+56956512495">
-        +56 9 5651 2495
-      </a>
-
-      <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel"
-         target="_blank" rel="noopener">
-        Casiopea ↗
-      </a>
-    </div>
-
-    <div class="contact-side reveal">
-      FLORENCIA PIMENTEL<br>
-      OLMUÉ · CHILE<br>
-      PORTFOLIO 2026
-    </div>
+  <div class="contact-links reveal">
+    <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">Mi wiki en Casiopea ↗</a>
+    <a href="#proyectos">Explorar proyectos ↑</a>
   </div>
 
   <div class="footer">
-    <span>© FLORENCIA PIMENTEL 2026</span>
-    <span>DISEÑADO CON INTENCIÓN.</span>
-    <a href="#inicio">VOLVER ARRIBA ↑</a>
+    <span>Florencia Pimentel © 2026</span>
+    <span>Portafolio de diseño</span>
+    <a href="#inicio">Volver arriba ↑</a>
   </div>
-</section>
+</footer>
 
 <script>
 const progress = document.getElementById('progress');
+const heroShape = document.getElementById('heroShape');
+const hero = document.querySelector('.hero');
 
-function updateProgress() {
+function updateScroll() {
   const scrollTop = window.scrollY;
-  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const percentage = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const percentage = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
 
   progress.style.width = percentage + '%';
+
+  const heroHeight = hero.offsetHeight;
+  const progressInHero = Math.min(scrollTop / heroHeight, 1);
+
+  const scale = .72 + progressInHero * 1.15;
+  const rotation = -18 + progressInHero * 45;
+  const verticalMove = progressInHero * 110;
+
+  heroShape.style.transform = `translateY(${verticalMove}px) scale(${scale}) rotate(${rotation}deg)`;
 }
 
-window.addEventListener('scroll', updateProgress, { passive: true });
-updateProgress();
+window.addEventListener('scroll', updateScroll, { passive: true });
+window.addEventListener('resize', updateScroll);
+updateScroll();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -1320,30 +1022,12 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.12,
-  rootMargin: '0px 0px -40px 0px'
+  threshold: 0.12
 });
 
-document.querySelectorAll(
-  '.reveal, .scale-in, .slide-left, .slide-right'
-).forEach(element => {
+document.querySelectorAll('.reveal').forEach(element => {
   observer.observe(element);
 });
-
-const marquee = document.querySelector('.marquee-track');
-
-window.addEventListener('scroll', () => {
-  if (!marquee) return;
-
-  const rect = marquee.getBoundingClientRect();
-
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    const movement = window.scrollY * 0.08;
-    marquee.style.transform = `translateX(${-movement % 500}px)`;
-  }
-}, { passive: true });
-
 </script>
-
 </body>
 </html>
