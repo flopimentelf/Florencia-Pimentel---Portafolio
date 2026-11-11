@@ -4,356 +4,951 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AQUÍ Y ALLÁ | Percepción peatonal</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700;800&display=swap');
+<meta name="theme-color" content="#f8f8f6">
+<title>Florencia Pimentel | Portafolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-*{box-sizing:border-box}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050505;font-family:Manrope,sans-serif}
-#opening{position:relative;width:100%;height:100svh;min-height:500px;overflow:hidden;background:#050505;color:#fff}
-#openingCanvas{position:absolute;inset:0;width:100%;height:100%}
-.opening-title{position:absolute;top:50%;left:50%;width:90%;transform:translate(-50%,-50%);text-align:center;opacity:0;transition:opacity 1.8s ease;pointer-events:none}
-.opening-title.show{opacity:1}
-.eyebrow{font:10px 'DM Mono',monospace;letter-spacing:3px;margin-bottom:25px;color:#aaa}
-.opening-title h1{font-size:clamp(48px,10vw,132px);font-weight:800;line-height:.9;letter-spacing:-.085em;margin:0}
-.opening-title p{font:11px 'DM Mono',monospace;letter-spacing:2px;line-height:2;color:#aaa;margin:30px auto 0}
-.opening-bottom{position:absolute;bottom:30px;left:5vw;right:5vw;display:flex;justify-content:space-between;font:9px 'DM Mono',monospace;letter-spacing:1.5px;color:#888;opacity:0;transition:opacity 1s ease}
-.opening-bottom.show{opacity:1}
-@media(max-width:650px){
-.opening-title{width:94%}
-.opening-title h1{font-size:16vw}
-.opening-bottom{left:20px;right:20px;font-size:8px}
+<style>
+:root {
+  --red: #800020;
+  --black: #080808;
+  --white: #f8f8f6;
+  --gray: #929292;
+  --line: rgba(0,0,0,.17);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--red);
+  z-index: 1000;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 22px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.logo {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-links a,
+.contact-links a {
+  transition: opacity .3s, color .3s;
+}
+
+.nav-links a:hover {
+  opacity: .55;
+}
+
+.hero {
+  min-height: 100svh;
+  padding: 150px 5% 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 55px;
+  position: relative;
+  z-index: 3;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.hero-date {
+  font-size: 12px;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 3;
+  font-size: clamp(65px, 12.5vw, 180px);
+  line-height: .95;
+  letter-spacing: -.045em;
+  font-weight: 800;
+  text-transform: uppercase;
+  word-spacing: .08em;
+}
+
+.hero-title span {
+  display: block;
+  letter-spacing: -.035em;
+}
+
+.hero-title .second-line {
+  padding-left: 12%;
+  color: var(--red);
+  letter-spacing: -.025em;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 65px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-description {
+  max-width: 380px;
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.scroll-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hero-year {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  font-size: clamp(120px, 23vw, 340px);
+  font-weight: 800;
+  letter-spacing: -.1em;
+  color: rgba(128,0,32,.045);
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-ball {
+  position: absolute;
+  width: 65vmin;
+  height: 65vmin;
+  max-width: 950px;
+  max-height: 950px;
+  border-radius: 50%;
+  background: var(--red);
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(.001);
+  transform-origin: center;
+  z-index: 1;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.about {
+  background: var(--black);
+  color: var(--white);
+  padding: 130px 5% 140px;
+  position: relative;
+}
+
+.section-index {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-bottom: 65px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 10%;
+}
+
+.about-heading {
+  font-size: clamp(42px, 6vw, 85px);
+  font-weight: 800;
+  line-height: .9;
+  letter-spacing: -.08em;
+  text-transform: uppercase;
+}
+
+.about-heading span {
+  color: var(--red);
+}
+
+.about-content {
+  padding-top: 8px;
+}
+
+.about-content p {
+  max-width: 650px;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.9;
+  font-weight: 400;
+  color: rgba(255,255,255,.8);
+}
+
+.wiki-link {
+  display: inline-block;
+  margin-top: 35px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--red);
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+
+.wiki-link:hover {
+  color: #d58b9c;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 110px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 25px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.skill strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.skill span {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+.works {
+  padding: 120px 5% 70px;
+}
+
+.works-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 85px;
+}
+
+.works-title {
+  font-size: clamp(60px, 10vw, 140px);
+  font-weight: 800;
+  letter-spacing: -.095em;
+  line-height: .8;
+  text-transform: uppercase;
+}
+
+.works-title span {
+  color: var(--red);
+}
+
+.works-count {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 7%;
+  padding: 55px 0 100px;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+
+.project:nth-of-type(even) {
+  grid-template-columns: .8fr 1.2fr;
+}
+
+.project:nth-of-type(even) .project-gallery {
+  order: 2;
+}
+
+.project:nth-of-type(even) .project-info {
+  order: 1;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  align-items: start;
+  min-width: 0;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  display: block;
+  background: #e7e5e1;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.project-gallery img:first-child {
+  grid-column: span 2;
+  height: clamp(230px, 37vw, 490px);
+}
+
+.project-gallery img:hover {
+  transform: scale(.985);
+}
+
+.project-info {
+  padding: 20px 0;
+  min-width: 0;
+}
+
+.project-number {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--red);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.project-info h3 {
+  font-size: clamp(30px, 4vw, 55px);
+  font-weight: 800;
+  letter-spacing: -.07em;
+  line-height: .98;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.project-year {
+  font-size: 11px;
+  color: var(--gray);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  font-size: 15px;
+  line-height: 1.85;
+  max-width: 470px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.project-details {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--gray);
+  margin-bottom: 25px;
+}
+
+.project-details strong {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 7px;
+  transition: color .3s;
+}
+
+.project-link:hover {
+  color: var(--red);
+}
+
+.contact {
+  background: var(--black);
+  color: var(--white);
+  padding: 120px 5% 40px;
+}
+
+.contact-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 100px;
+}
+
+.contact-title {
+  font-size: clamp(65px, 12vw, 165px);
+  line-height: .8;
+  letter-spacing: -.1em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.contact-title span {
+  color: var(--red);
+  display: block;
+}
+
+.contact-side {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.9;
+  max-width: 220px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(255,255,255,.2);
+  padding-top: 25px;
+}
+
+.contact-links a {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-links a:hover {
+  color: #d58b9c;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 110px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.2);
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+  nav {
+    padding: 18px 5%;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 8px;
+  }
+
+  .hero {
+    min-height: 90svh;
+    padding-top: 130px;
+  }
+
+  .hero-title {
+    font-size: clamp(55px, 14vw, 100px);
+    letter-spacing: -.035em;
+    line-height: .98;
+  }
+
+  .hero-title span {
+    letter-spacing: -.025em;
+  }
+
+  .hero-title .second-line {
+    padding-left: 4%;
+    letter-spacing: -.015em;
+  }
+
+  .hero-ball {
+    width: 75vmin;
+    height: 75vmin;
+  }
+
+  .hero-bottom {
+    gap: 25px;
+    align-items: flex-end;
+  }
+
+  .hero-description {
+    max-width: 230px;
+    font-size: 13px;
+  }
+
+  .scroll-label {
+    font-size: 8px;
+    text-align: right;
+  }
+
+  .about {
+    padding: 90px 6%;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-heading {
+    font-size: 65px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 70px;
+  }
+
+  .skill strong,
+  .skill span {
+    font-size: 12px;
+  }
+
+  .works {
+    padding: 90px 6% 50px;
+  }
+
+  .works-header {
+    margin-bottom: 60px;
+  }
+
+  .works-title {
+    font-size: 70px;
+  }
+
+  .project,
+  .project:nth-of-type(even) {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 40px 0 70px;
+  }
+
+  .project:nth-of-type(even) .project-gallery,
+  .project:nth-of-type(even) .project-info {
+    order: initial;
+  }
+
+  .project-gallery img {
+    height: 180px;
+  }
+
+  .project-gallery img:first-child {
+    height: 280px;
+  }
+
+  .project-info h3 {
+    font-size: 40px;
+  }
+
+  .project-description {
+    font-size: 14px;
+  }
+
+  .project-details {
+    font-size: 11px;
+  }
+
+  .contact {
+    padding: 90px 6% 30px;
+  }
+
+  .contact-top {
+    flex-direction: column;
+    gap: 45px;
+    margin-bottom: 70px;
+  }
+
+  .contact-title {
+    font-size: 85px;
+  }
+
+  .contact-side {
+    font-size: 13px;
+  }
+
+  .footer {
+    margin-top: 80px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
+
 <body>
+<div class="progress" id="progress"></div>
 
-<section id="opening">
-<canvas id="openingCanvas"></canvas>
+<nav>
+  <a href="#inicio" class="logo">FP.</a>
+  <div class="nav-links">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">Wiki</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
 
-<div class="opening-title" id="openingTitle">
-<div class="eyebrow">CIUDADES PUERTO / CHILE × ARGENTINA</div>
-<h1>PERCEPCIÓN<br>PEATONAL</h1>
-<p>VALPARAÍSO · BUENOS AIRES</p>
-</div>
+<header class="hero" id="inicio">
+  <div class="hero-year">2026</div>
+  <div class="hero-ball" id="heroBall"></div>
 
-<div class="opening-bottom" id="openingBottom">
-<span>AQUÍ / CHILE</span>
-<span>ALLÁ / ARGENTINA</span>
-</div>
+  <div class="hero-top">
+    <span class="eyebrow">Portafolio de diseño</span>
+    <span class="hero-date">2025 — 2026</span>
+  </div>
+
+  <h1 class="hero-title">
+    <span>Florencia</span>
+    <span class="second-line">Pimentel.</span>
+  </h1>
+
+  <div class="hero-bottom">
+    <p class="hero-description">
+      Diseño gráfico, interacción y exploración de distintas posibilidades del diseño.
+    </p>
+    <span class="scroll-label">Desliza para explorar ↓</span>
+  </div>
+</header>
+
+<section class="about" id="sobre-mi">
+  <div class="section-index reveal">01 / Sobre mí</div>
+
+  <div class="about-grid">
+    <h2 class="about-heading reveal">Diseñar<br>desde la<br><span>curiosidad.</span></h2>
+
+    <div class="about-content reveal">
+      <p>
+        Estudio Diseño en la Escuela de Arquitectura y Diseño de la Pontificia Universidad Católica de Valparaíso. Actualmente curso cuarto año, en la etapa previa al título. Mis intereses se centran en el diseño gráfico y de interacción. Además, cuento con habilidades en diseño industrial, especialmente en modelado tridimensional, desarrollo de objetos y fabricación digital.
+      </p>
+
+      <a class="wiki-link" href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">
+        Explorar mi wiki en Casiopea
+      </a>
+    </div>
+  </div>
+
+  <div class="skills reveal">
+    <div class="skill">
+      <strong>DISEÑO GRÁFICO</strong>
+      <span>Identidad visual · Diseño editorial · Comunicación visual</span>
+    </div>
+    <div class="skill">
+      <strong>DISEÑO DE INTERACCIÓN</strong>
+      <span>Experiencia · Medios digitales · Diseño web</span>
+    </div>
+    <div class="skill">
+      <strong>DISEÑO INDUSTRIAL</strong>
+      <span>Modelado 3D · Desarrollo de objetos · Fabricación digital</span>
+    </div>
+  </div>
 </section>
 
+<main class="works" id="proyectos">
+  <div class="works-header reveal">
+    <h2 class="works-title">Proyec<span>tos.</span></h2>
+    <span class="works-count">SELECCIÓN / 2025—2026</span>
+  </div>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/urdimbre-01.jpg" alt="Proyecto Urdimbre, vista general">
+      <img src="img/img/urdimbre-02.jpg" alt="Detalle del mecanismo Urdimbre">
+      <img src="img/img/urdimbre-03.jpg" alt="Componentes del proyecto Urdimbre">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">01 / PROYECTO</div>
+      <h3>Urdimbre</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Sistema de apoyo para la impresión 3D en arcilla que busca acompañar el proceso de construcción de formas. Mediante una base de madera y muros de acrílico transparente cortados con láser, se incorporan varillas de madera de manera manual durante la extrusión para sostener zonas inestables. El proyecto considera un kit de componentes, manual de uso y packaging.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Grasshopper · Corte láser · Impresión 3D en arcilla · AutoCAD · InDesign · Illustrator<br>
+        <strong>Docentes:</strong> Leonardo Aravena y Renée Rodo<br>
+        <strong>Colaboradores:</strong> Alonso Hernández y Matías Arce
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/Matias_Arce,_Alonso_Hernandez,_Florencia_Pimentel._TPyT_S1_2026._Flujo_y_Asiento" target="_blank" rel="noopener noreferrer">Ver proyecto en Casiopea</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/continuidad-01.jpg" alt="Continuidad estratificada de una forma envolvente">
+      <img src="img/img/continuidad-02.jpg" alt="Detalle de impresión en arcilla">
+      <img src="img/img/continuidad-03.jpg" alt="Resultado cerámico del proyecto">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">02 / PROYECTO</div>
+      <h3>Continuidad estratificada</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Exploración de la construcción paramétrica de formas envolventes mediante Rhinoceros, Grasshopper e impresión 3D en arcilla. El ejercicio trabaja con trayectorias continuas y capas sucesivas, poniendo a prueba los límites estructurales del material hasta alcanzar su colapso. El modelo final atraviesa un proceso cerámico de secado, quema y esmaltado.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Diseño paramétrico · Grasshopper · Impresión 3D en arcilla · Photoshop<br>
+        <strong>Docentes:</strong> Leonardo Aravena y Renée Rodo
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/TPyT_S1_2026._Continuidad_estratificada_de_una_forma_envolvente" target="_blank" rel="noopener noreferrer">Ver proyecto en Casiopea</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/tramas-01.jpg" alt="Tramas de Elección, dispositivo de participación">
+      <img src="img/img/tramas-02.jpg" alt="Detalle de las piezas acrílicas">
+      <img src="img/img/tramas-03.jpg" alt="Visualización digital de resultados">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">03 / PROYECTO</div>
+      <h3>Tramas de Elección</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Dispositivo físico de levantamiento de información situado en Barrio Puerto, Valparaíso. A través de capas de acrílico cortadas con láser, recoge percepciones sobre seguridad, luminosidad, transitabilidad y actividad urbana. La experiencia se complementa con una plataforma web interactiva que representa los resultados mediante formas geométricas de distintos colores.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> AutoCAD · Illustrator · Corte láser · Diseño web · HTML · CSS · JavaScript · Supabase<br>
+        <strong>Docentes:</strong> Katherine Eexe y Javiera Ruiz<br>
+        <strong>Colaboradores:</strong> Fabián Flores, Amanda Garviso, Agustina Silva, Catalina Esperanza González Godoy, Gloria García y Antonela Barría
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://wiki.ead.pucv.cl/Proyecto_de_Visualizaci%C3%B3n_-_Grupo_1" target="_blank" rel="noopener noreferrer">Ver investigación</a>
+        <a class="project-link" href="https://flopimentelf.github.io/Tramas-de-elecci-n/" target="_blank" rel="noopener noreferrer">Ver plataforma</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/pimentel-01.jpg" alt="Identidad visual Pimentel Máquinas y Áridos">
+      <img src="img/img/pimentel-02.jpg" alt="Aplicaciones de marca Pimentel">
+      <img src="img/img/pimentel-03.jpg" alt="Sistema gráfico de Pimentel">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">04 / IDENTIDAD VISUAL</div>
+      <h3>Pimentel Máquinas y Áridos</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Desarrollo de identidad visual para una empresa familiar de Olmué, dedicada hace más de veinte años al movimiento de tierra, arriendo de maquinaria y venta de áridos. El proyecto aborda la construcción de una nueva marca, su sistema gráfico y distintas aplicaciones para comunicar sus servicios.
+      </p>
+      <div class="project-details">
+        <strong>Áreas:</strong> Branding · Identidad visual · Diseño gráfico · Aplicaciones de marca
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/nene-01.jpg" alt="Identidad visual de Nené Alfajores">
+      <img src="img/img/nene-02.jpg" alt="Aplicaciones gráficas de Nené Alfajores">
+      <img src="img/img/nene-03.jpg" alt="Packaging de Nené Alfajores">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">05 / PROYECTO PERSONAL</div>
+      <h3>Nené Alfajores</h3>
+      <div class="project-year">2026</div>
+      <p class="project-description">
+        Emprendimiento personal de alfajores que desarrolla una identidad visual en torno al color azul y los mosaicos. La propuesta busca construir un lenguaje gráfico cálido y reconocible, aplicado a los productos, piezas promocionales y contenidos para redes sociales.
+      </p>
+      <div class="project-details">
+        <strong>Áreas:</strong> Branding · Packaging · Diseño gráfico · Comunicación visual
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <div class="project-gallery reveal">
+      <img src="img/img/exposicion-01.jpg" alt="Exposición 40 años de viajes por América">
+      <img src="img/img/exposicion-02.jpg" alt="Módulos expositivos">
+      <img src="img/img/exposicion-03.jpg" alt="Detalle de montaje de la exposición">
+    </div>
+
+    <div class="project-info reveal">
+      <div class="project-number">06 / EXPOSICIÓN</div>
+      <h3>40 años de viajes por América</h3>
+      <div class="project-year">2025</div>
+      <p class="project-description">
+        Participación en el desarrollo de módulos expositivos para la muestra presentada en el Instituto de Arquitetos do Brasil, en Río de Janeiro. En colaboración con estudiantes del Taller de Diseño de Ediciones Digitales, se diseñaron y fabricaron módulos que orientaban a los visitantes hacia una página web, integrando composición editorial, edición de imágenes y construcción manual.
+      </p>
+      <div class="project-details">
+        <strong>Procesos:</strong> Construcción y fabricación manual de módulos expositivos · Corte y ensamblaje · Trabajo colaborativo · InDesign · Adobe Photoshop
+      </div>
+      <div class="project-links">
+        <a class="project-link" href="https://www.ead.pucv.cl/experiencia/travesias/exposicion-40-anos-de-viajes-por-america/" target="_blank" rel="noopener noreferrer">Ver exposición</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="contact" id="contacto">
+  <div class="section-index reveal">02 / Contacto</div>
+
+  <div class="contact-top reveal">
+    <h2 class="contact-title">Hablemos<span>de ideas.</span></h2>
+    <p class="contact-side">
+      Un espacio para compartir proyectos, procesos y nuevas posibilidades de colaboración.
+    </p>
+  </div>
+
+  <div class="contact-links reveal">
+    <a href="mailto:florencia.pimentel.f@mail.pucv.cl">florencia.pimentel.f@mail.pucv.cl</a>
+    <a href="tel:+56956512495">+56 9 5651 2495</a>
+    <a href="https://wiki.ead.pucv.cl/Florencia_Pimentel" target="_blank" rel="noopener noreferrer">Mi wiki en Casiopea</a>
+    <a href="#proyectos">Explorar proyectos</a>
+  </div>
+
+  <div class="footer">
+    <span>Florencia Pimentel © 2026</span>
+    <span>Portafolio de diseño</span>
+    <a href="#inicio">Volver arriba</a>
+  </div>
+</footer>
+
 <script>
-const canvas=document.getElementById('openingCanvas');
-const ctx=canvas.getContext('2d');
+const progress = document.getElementById('progress');
+const heroBall = document.getElementById('heroBall');
+const hero = document.querySelector('.hero');
 
-let W=0,H=0,DPR=1;
-const start=performance.now();
+function updateScroll() {
+  const scrollTop = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const percentage = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
 
-const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+  progress.style.width = percentage + '%';
 
-function ease(t){
-t=clamp(t,0,1);
-return t*t*(3-2*t);
+  const heroHeight = hero.offsetHeight;
+  const progressInHero = Math.min(Math.max(scrollTop / (heroHeight * .85), 0), 1);
+
+  const scale = progressInHero * 2.8;
+  const opacity = Math.min(progressInHero * 3.5, 1);
+
+  heroBall.style.transform = `translate(-50%, -50%) scale(${Math.max(scale, .001)})`;
+  heroBall.style.opacity = opacity;
 }
 
-function smoother(t){
-t=clamp(t,0,1);
-return t*t*t*(t*(6*t-15)+10);
-}
+window.addEventListener('scroll', updateScroll, { passive: true });
+window.addEventListener('resize', updateScroll);
+updateScroll();
 
-function resize(){
-DPR=Math.min(window.devicePixelRatio||1,2);
-W=window.innerWidth;
-H=window.innerHeight;
-canvas.width=W*DPR;
-canvas.height=H*DPR;
-canvas.style.width=W+'px';
-canvas.style.height=H+'px';
-ctx.setTransform(DPR,0,0,DPR,0,0);
-}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.12
+});
 
-window.addEventListener('resize',resize);
-resize();
-
-function stroke(x1,y1,x2,y2,width){
-ctx.beginPath();
-ctx.moveTo(x1,y1);
-ctx.lineTo(x2,y2);
-ctx.lineWidth=width;
-ctx.lineCap='round';
-ctx.lineJoin='round';
-ctx.strokeStyle='#f5f5f2';
-ctx.stroke();
-}
-
-function drawPerson(x,y,phase,lean,scale,pose=0){
-ctx.save();
-ctx.translate(x,y);
-ctx.rotate(lean);
-ctx.scale(scale,scale);
-
-const swing=Math.sin(phase);
-const legA=swing*19;
-const legB=-swing*19;
-const armA=-swing*13;
-const armB=swing*13;
-
-ctx.fillStyle='#f5f5f2';
-
-ctx.beginPath();
-ctx.arc(0,-108,14,0,Math.PI*2);
-ctx.fill();
-
-ctx.beginPath();
-ctx.roundRect(-13,-86,26,49,12);
-ctx.fill();
-
-if(pose<0.2){
-stroke(-7,-41,-13+legA*.45,-21,10);
-stroke(-13+legA*.45,-21,-18+legA,-2,9);
-stroke(7,-41,13+legB*.45,-21,10);
-stroke(13+legB*.45,-21,18+legB,-2,9);
-
-stroke(-9,-78,-17+armA*.4,-59,9);
-stroke(-17+armA*.4,-59,-19+armA,-46,8);
-stroke(9,-78,17+armB*.4,-59,9);
-stroke(17+armB*.4,-59,19+armB,-46,8);
-}else{
-const p=clamp(pose,0,1);
-
-stroke(-7,-41,-17-p*9,-24+p*7,10);
-stroke(-17-p*9,-24+p*7,-23-p*12,-4+p*5,9);
-
-stroke(7,-41,17+p*10,-24+p*7,10);
-stroke(17+p*10,-24+p*7,24+p*12,-5+p*5,9);
-
-stroke(-9,-79,-27-p*10,-65-p*5,9);
-stroke(-27-p*10,-65-p*5,-37-p*8,-51-p*8,8);
-
-stroke(9,-79,27+p*10,-65-p*5,9);
-stroke(27+p*10,-65-p*5,37+p*8,-51-p*8,8);
-}
-
-ctx.restore();
-}
-
-function drawStone(x,y,size,rotation){
-ctx.save();
-ctx.translate(x,y);
-ctx.rotate(rotation);
-ctx.fillStyle='#f5f5f2';
-
-ctx.beginPath();
-ctx.moveTo(-size,-2);
-ctx.lineTo(-size*.55,-size*.7);
-ctx.lineTo(size*.25,-size);
-ctx.lineTo(size,-size*.3);
-ctx.lineTo(size*.65,size*.35);
-ctx.lineTo(-size*.45,size*.4);
-ctx.closePath();
-ctx.fill();
-
-ctx.restore();
-}
-
-function drawCar(x,y,scale){
-ctx.save();
-ctx.translate(x,y);
-ctx.scale(scale,scale);
-
-ctx.fillStyle='#f5f5f2';
-ctx.beginPath();
-ctx.moveTo(-78,-16);
-ctx.quadraticCurveTo(-74,-32,-50,-35);
-ctx.lineTo(-25,-55);
-ctx.quadraticCurveTo(-17,-62,0,-62);
-ctx.lineTo(35,-59);
-ctx.quadraticCurveTo(51,-57,60,-35);
-ctx.lineTo(78,-27);
-ctx.quadraticCurveTo(86,-24,86,-13);
-ctx.lineTo(86,-6);
-ctx.quadraticCurveTo(86,0,76,0);
-ctx.lineTo(-75,0);
-ctx.quadraticCurveTo(-86,0,-86,-9);
-ctx.lineTo(-86,-17);
-ctx.closePath();
-ctx.fill();
-
-ctx.fillStyle='#050505';
-
-ctx.beginPath();
-ctx.moveTo(-20,-54);
-ctx.lineTo(-2,-54);
-ctx.lineTo(-1,-37);
-ctx.lineTo(-44,-37);
-ctx.closePath();
-ctx.fill();
-
-ctx.beginPath();
-ctx.moveTo(7,-54);
-ctx.lineTo(32,-52);
-ctx.quadraticCurveTo(45,-50,52,-37);
-ctx.lineTo(7,-37);
-ctx.closePath();
-ctx.fill();
-
-ctx.beginPath();
-ctx.arc(-50,0,13,0,Math.PI*2);
-ctx.arc(50,0,13,0,Math.PI*2);
-ctx.fill();
-
-ctx.fillStyle='#f5f5f2';
-ctx.beginPath();
-ctx.arc(-50,0,5,0,Math.PI*2);
-ctx.arc(50,0,5,0,Math.PI*2);
-ctx.fill();
-
-ctx.restore();
-}
-
-function drawFloor(ground,holeX,holeWidth,holeHeight){
-ctx.save();
-
-ctx.fillStyle='#f5f5f2';
-ctx.beginPath();
-ctx.rect(0,ground,W,H-ground);
-ctx.ellipse(holeX,ground,holeWidth,holeHeight,0,0,Math.PI*2);
-ctx.fill('evenodd');
-
-ctx.strokeStyle='#f5f5f2';
-ctx.lineWidth=3;
-ctx.beginPath();
-ctx.ellipse(holeX,ground,holeWidth,holeHeight,Math.PI,0);
-ctx.stroke();
-
-ctx.restore();
-}
-
-function drawOpening(now){
-const t=(now-start)/1000;
-
-ctx.clearRect(0,0,W,H);
-ctx.fillStyle='#050505';
-ctx.fillRect(0,0,W,H);
-
-const ground=H*.77;
-const scale=Math.min(2.45,Math.max(1.8,H/360));
-
-const startX=W*.16;
-const stoneX=W*.43;
-const holeX=W*.79;
-const holeWidth=Math.min(110,W*.15);
-const holeHeight=31;
-
-const stumbleAt=2.55;
-const stumbleDuration=.55;
-const carAt=3.7;
-const carDuration=.85;
-const recoveryAt=4.8;
-const walkAgainAt=5.1;
-const fallAt=7.35;
-const fallDuration=1.5;
-
-const stumble=ease((t-stumbleAt)/.2)*(1-ease((t-3.25)/.3));
-const recoil=ease((t-3.75)/.12)*(1-ease((t-4.5)/.25));
-
-let personX;
-let personY=ground;
-let lean=0;
-let pose=0;
-let phase=t*8;
-
-const stumbleX=stoneX-70*scale;
-const finalWalkX=holeX;
-
-if(t<stumbleAt){
-personX=startX+(stumbleX-startX)*ease(t/stumbleAt);
-}else if(t<recoveryAt){
-personX=stumbleX;
-lean=stumble*.62-recoil*.25;
-pose=Math.max(stumble,recoil);
-phase=stumbleAt*8;
-}else if(t<fallAt){
-const walkProgress=ease((t-walkAgainAt)/(fallAt-walkAgainAt));
-personX=stumbleX+(finalWalkX-stumbleX)*walkProgress;
-lean=-recoil*.2;
-pose=0;
-phase=t*8;
-}else{
-const fall=smoother((t-fallAt)/fallDuration);
-personX=holeX;
-personY=ground+fall*390;
-lean=fall*.12;
-pose=fall;
-phase=t*5;
-}
-
-const stoneFade=ease((t-stumbleAt)/.12);
-if(t<stumbleAt+.2){
-ctx.save();
-ctx.globalAlpha=1-stoneFade;
-drawStone(stoneX,ground-2,19,stumble*.6);
-ctx.restore();
-}
-
-const carProgress=smoother((t-carAt)/carDuration);
-if(t>carAt&&t<carAt+carDuration+.1){
-const carX=W+250-carProgress*(W+520);
-const carScale=Math.max(1.55,Math.min(2,H/400));
-drawCar(carX,ground-3,carScale);
-}
-
-if(t>3.75&&t<4.45){
-const flash=(1-ease((t-3.75)/.7))*.22;
-ctx.fillStyle=`rgba(255,255,255,${flash})`;
-ctx.fillRect(0,0,W,H);
-}
-
-drawFloor(ground,holeX,holeWidth,holeHeight);
-
-if(t<fallAt){
-drawPerson(personX,personY,phase,lean,scale,pose);
-}else{
-const fall=smoother((t-fallAt)/fallDuration);
-
-ctx.save();
-ctx.beginPath();
-ctx.ellipse(holeX,ground,holeWidth,holeHeight,0,0,Math.PI*2);
-ctx.clip();
-
-drawPerson(personX,personY,phase,lean,scale,pose);
-
-ctx.restore();
-}
-
-if(t>fallAt+.25&&t<fallAt+fallDuration){
-const depth=ease((t-fallAt-.25)/.8);
-ctx.save();
-ctx.globalAlpha=depth*.55;
-ctx.fillStyle='#050505';
-ctx.beginPath();
-ctx.ellipse(holeX,ground,holeWidth,holeHeight,0,0,Math.PI*2);
-ctx.fill();
-ctx.restore();
-}
-
-const fade=ease((t-8.45)/.9);
-if(fade>0){
-ctx.fillStyle=`rgba(5,5,5,${fade})`;
-ctx.fillRect(0,0,W,H);
-}
-
-if(t>9.35){
-document.getElementById('openingTitle').classList.add('show');
-document.getElementById('openingBottom').classList.add('show');
-}
-
-requestAnimationFrame(drawOpening);
-}
-
-requestAnimationFrame(drawOpening);
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
 </script>
-
 </body>
 </html>
